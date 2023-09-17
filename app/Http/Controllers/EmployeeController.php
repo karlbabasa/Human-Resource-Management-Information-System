@@ -57,4 +57,38 @@ class EmployeeController extends Controller
             'employees' => Employee::all()
         ]);
     }
+
+    // Show edit form
+    public function edit(Employee $employee) {
+        return view('employees.edit', ['employee' => $employee]);
+    }
+
+    // update listing data
+    public function update(Request $request, Employee $employee) {
+
+        // //make sure logged in user is owner
+        // if($listing->user_id != auth()->id()) {
+        //     abort(403, 'Unauthorized Action');
+        // }
+
+        $formFields = $request->validate([
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'last_name' => 'required',
+            'email' => ['required', 'email'],
+            'phone' => 'required',
+            'address' => 'required',
+            'position' => 'required',
+            'department' => 'required',
+            'remark' => 'required'
+        ]);
+
+        if($request->hasFile('picture')) {
+            $formFields['picture'] = $request->file('picture')->store('pictures','public');
+        }
+
+        $employee->update($formFields);
+
+        return back()->with('message', 'Employee updated successfully!');
+    }
 }
