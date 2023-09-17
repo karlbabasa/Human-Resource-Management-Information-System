@@ -77,8 +77,8 @@
             <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
 
             <a
-                href="/listings/create"
-                class="fa-solid fa-user-plus rounded absolute top-1/3 right-10 bg-black text-white py-2 px-5"
+                href="/employee/create"
+                class="p-10 fa-solid fa-user-plus rounded absolute top-1/3 right-10 bg-black text-white py-2 px-5"
                 > Add Employee</a
             >
         </footer>

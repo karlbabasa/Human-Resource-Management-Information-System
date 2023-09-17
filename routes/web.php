@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [EmployeeController::class, 'index']);
+
+Route::get('/employee/create', [EmployeeController::class, 'create']);
