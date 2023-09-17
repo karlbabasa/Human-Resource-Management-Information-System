@@ -7,55 +7,55 @@
             <p class="mb-4">Kindly complete the form</p>
         </header>
 
-        <form method="POST" action="/listings" enctype="multipart/form-data">
+        <form method="POST" action="/employees" enctype="multipart/form-data">
             @csrf
             <div class="mb-6">
                 <label
-                    for="firstName"
+                    for="first_name"
                     class="inline-block text-lg mb-2"
                     >First Name</label
                 >
                 <input
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="firstName"
-                    value="{{old('firstName')}}"
+                    name="first_name"
+                    value="{{old('first_name')}}"
                 />
 
-                @error('firstName')
+                @error('first_name')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <label for="middleName" class="inline-block text-lg mb-2"
+                <label for="middle_name" class="inline-block text-lg mb-2"
                     >Middle Name</label
                 >
                 <input
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="middleName"
-                    value="{{old('middleName')}}"
+                    name="middle_name"
+                    value="{{old('middle_name')}}"
                 />
 
-                @error('middleName')
+                @error('middle_name')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
 
             </div>
 
             <div class="mb-6">
-                <label for="lastName" class="inline-block text-lg mb-2"
+                <label for="last_name" class="inline-block text-lg mb-2"
                     >Last Name</label
                 >
                 <input
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="middleName"
-                    value="{{old('lastName')}}"
+                    name="last_name"
+                    value="{{old('last_name')}}"
                 />
 
-                @error('lastName')
+                @error('last_name')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
 
@@ -106,7 +106,7 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="address"
                     placeholder="Example: Remote, Boston MA, etc"
-                    value="{{old('location')}}"
+                    value="{{old('address')}}"
                 />
 
                 @error('address')
@@ -122,7 +122,7 @@
                 <input
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="middleName"
+                    name="position"
                     value="{{old('position')}}"
                 />
 
@@ -139,11 +139,28 @@
                 <input
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="middleName"
+                    name="department"
                     value="{{old('department')}}"
                 />
 
                 @error('department')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
+
+            </div>
+
+            <div class="mb-6">
+                <label for="start_date" class="inline-block text-lg mb-2"
+                    >Date Hired</label
+                >
+                <input
+                    type="date"
+                    class="border border-gray-200 rounded p-2 w-full"
+                    name="start_date"
+                    value="{{old('start_date')}}"
+                />
+
+                @error('start_date')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
 

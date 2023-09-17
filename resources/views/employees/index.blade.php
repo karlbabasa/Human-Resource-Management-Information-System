@@ -12,7 +12,7 @@
                         />
                         <div>
                             <h3 class="text-2xl">
-                                <a href="show.html">Employees</a>
+                                <a href="/employee/list">Employees</a>
                             </h3>
                             <div class="text-xl font-bold mb-4">1,999</div>
                         </div>

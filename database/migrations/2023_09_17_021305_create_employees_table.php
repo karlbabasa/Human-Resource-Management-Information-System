@@ -14,18 +14,19 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
+            $table->string('middle_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('profile')->nullable();
+            $table->string('picture')->nullable();
+            //$table->string('profile')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('position')->nullable();
             $table->string('department')->nullable();
+            $table->longText('remark')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
-            $table->string('salary')->nullable();
+            //$table->string('salary')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
