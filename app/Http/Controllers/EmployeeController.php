@@ -91,4 +91,23 @@ class EmployeeController extends Controller
 
         return back()->with('message', 'Employee updated successfully!');
     }
+
+    // Delete Listing
+    public function destroy(Employee $employee) {
+
+        //make sure logged in user is owner
+        // if($employee->user_id != auth()->id()) {
+        //     abort(403, 'Unauthorized Action');
+        // }
+
+        $employee->delete();
+        return redirect('/employee/list')->with('message', 'Deleted Successfully!');
+    }
+
+    // show single listing
+    public function showOne(Employee $employee) {
+        return view('employees.showOne', [
+            'employee' => $employee
+        ]);
+    }
 }

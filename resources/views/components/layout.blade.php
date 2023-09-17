@@ -20,6 +20,7 @@
                     extend: {
                         colors: {
                             laravel: "#ef3b2d",
+                            myColor: "#5fb8b6"
                         },
                     },
                 },
@@ -40,9 +41,8 @@
                     </span>
                 </li>
                 <li>
-                    <a href="/listings/manage" class="hover:text-laravel"
-                        ><i class="fa-solid fa-gear"></i>
-                        Manage Listings</a
+                    <a href="/register" class="hover:text-myColor"
+                        ><i class="fa-solid fa-user-plus"></i> Add Admin</a
                     >
                 </li>
                 <li>
@@ -54,13 +54,13 @@
                     </form>
                 </li>
                 @else
-                <li>
-                    <a href="/register" class="hover:text-laravel"
+                {{-- <li>
+                    <a href="/register" class="hover:text-myColor"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
                     >
-                </li>
+                </li> --}}
                 <li>
-                    <a href="/login" class="hover:text-laravel"
+                    <a href="/login" class="hover:text-myColor"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a
                     >
@@ -72,7 +72,7 @@
          {{$slot}}
     </main>
 <footer
-            class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center"
+            class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-myColor text-white h-24 mt-24 opacity-90 md:justify-center"
         >
             <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
 

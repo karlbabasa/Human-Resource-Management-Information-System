@@ -26,7 +26,7 @@
                     <td
                         class="px-4 py-8 border-t border-r border-l border-b border-gray-300 text-lg"
                     >
-                        <a href="/employees/{{$employee->id}}">
+                        <a href="/employee/{{$employee->id}}">
                             {{$employee->first_name}} {{$employee->last_name}}
                         </a>
                     </td>
@@ -34,7 +34,7 @@
                     <td
                         class="px-4 py-8 border-t border-r border-b border-gray-300 text-lg"
                     >
-                        <a href="/employees/{{$employee->id}}">
+                        <a href="/employee/{{$employee->id}}">
                             {{$employee->department}}
                         </a>
                     </td>
@@ -42,7 +42,7 @@
                     <td
                         class="px-4 py-8 border-t border-r border-b border-gray-300 text-lg"
                     >
-                        <a href="/employees/{{$employee->id}}">
+                        <a href="/employee/{{$employee->id}}">
                             {{$employee->position}}
                         </a>
                     </td>
@@ -50,7 +50,7 @@
                     <td
                         class="px-4 py-8 border-t border-r border-b border-gray-300 text-lg"
                     >
-                        <a href="/employees/{{$employee->id}}">
+                        <a href="/employee/{{$employee->id}}">
                             {{$employee->address}}
                         </a>
                     </td>
@@ -58,7 +58,7 @@
                     <td
                         class="px-4 py-8 border-t border-r border-b border-gray-300 text-lg"
                     >
-                        <a href="/employees/{{$employee->id}}">
+                        <a href="/employee/{{$employee->id}}">
                             {{$employee->email}}
                         </a>
                     </td>
@@ -66,14 +66,14 @@
                     <td
                         class="px-4 py-8 border-t border-r border-b border-gray-300 text-lg"
                     >
-                        <a href="/employees/{{$employee->id}}">
+                        <a href="/employee/{{$employee->id}}">
                             {{$employee->phone}}
                         </a>
                     </td>
 
                     <td class="px-4 py-8 border-t border-r border-b border-gray-300 text-lg">
                         <a
-                            href="/employees/{{$employee->id}}/edit"
+                            href="/employee/{{$employee->id}}/edit"
                             class="text-blue-400 px-6 py-2 rounded-xl"
                             ><i
                                 class="fa-solid fa-pen-to-square"
@@ -81,7 +81,7 @@
                             Edit</a
                         >
                     
-                        <form method="POST" action="#">
+                        <form method="POST" action="/employees/{{$employee->id}}/delete">
                             @csrf
                             @method('DELETE')
                             <button class="text-red-500 px-6 py-2"><i class="fa-solid fa-trash"></i>Delete</button>
