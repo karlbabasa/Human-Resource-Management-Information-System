@@ -150,6 +150,22 @@
             </div>
 
             <div class="mb-6">
+                <label for="rank" class="inline-block text-lg mb-2"
+                    >Rank Position</label
+                >
+                <select name="rank" class="border border-gray-200 rounded p-2 w-full"> 
+                    <option value="Rank and File">Rank and File</option> 
+                    <option value="Supervisory">Supervisory</option> 
+                    <option value="Department Head">Department Head</option> 
+                </select>
+
+                @error('rank')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
+
+            </div>
+
+            <div class="mb-6">
                 <label for="start_date" class="inline-block text-lg mb-2"
                     >Date Hired</label
                 >

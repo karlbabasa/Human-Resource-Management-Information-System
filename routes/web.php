@@ -37,10 +37,10 @@ Route::delete('/employees/{employee}/delete', [EmployeeController::class, 'destr
 Route::get('/employee/{employee}', [EmployeeController::class, 'showOne'])->middleware('auth');
 
 //Show Register/Create Form
-Route::get('/register', [UserController::class, 'create'])->middleware('auth');
+Route::get('/register', [UserController::class, 'create']);
 
 //CREATE NEW USER
-Route::post('/users', [UserController::class, 'store'])->middleware('auth');
+Route::post('/users', [UserController::class, 'store']);
 
 //LOGOUT
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');

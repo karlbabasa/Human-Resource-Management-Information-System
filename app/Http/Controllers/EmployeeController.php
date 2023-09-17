@@ -33,6 +33,7 @@ class EmployeeController extends Controller
             'address' => 'required',
             'position' => 'required',
             'department' => 'required',
+            'rank' => 'required',
             'start_date' => 'required',
             'remark' => 'required'
         ]);
@@ -73,6 +74,7 @@ class EmployeeController extends Controller
             'address' => 'required',
             'position' => 'required',
             'department' => 'required',
+            'rank' => 'required',
             'remark' => 'required'
         ]);
 

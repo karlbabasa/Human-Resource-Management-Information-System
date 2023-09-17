@@ -9,7 +9,7 @@ class Employee extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first_name', 'middle_name', 'last_name', 'email', 'phone', 'address', 'position', 'department', 'started_date', 'picture', 'remark'];
+    protected $fillable = ['first_name', 'middle_name', 'last_name', 'email', 'phone', 'address', 'position', 'department', 'started_date', 'picture', 'remark', 'rank'];
 
     public function scopeFilter($query, array $filters) {
  
@@ -21,7 +21,8 @@ class Employee extends Model
              ->orWhere('phone', 'like', '%' . request('search') . '%')
              ->orWhere('address', 'like', '%' . request('search') . '%')
              ->orWhere('position', 'like', '%' . request('search') . '%')
-             ->orWhere('department', 'like', '%' . request('search') . '%');
+             ->orWhere('department', 'like', '%' . request('search') . '%')
+             ->orWhere('rank', 'like', '%' . request('search') . '%');
          }
      }
  

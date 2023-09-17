@@ -9,7 +9,7 @@
                     <div class="flex">
                         <img
                             class="hidden w-48 mr-6 md:block"
-                            src="images/logo.png"
+                            src="images/employee.png"
                             alt=""
                         />
                         <div>
@@ -25,12 +25,12 @@
                     <div class="flex">
                         <img
                             class="hidden w-48 mr-6 md:block"
-                            src="images/logo.png"
+                            src="images/managerial.png"
                             alt=""
                         />
                         <div>
                             <h3 class="text-2xl">
-                                <a href="show.html">Department Heads</a>
+                                <a href="/employee/list?search=department+head">Department Heads</a>
                             </h3>
                             <div class="text-xl font-bold mb-4">
                                 15
@@ -43,12 +43,12 @@
                     <div class="flex">
                         <img
                             class="hidden w-48 mr-6 md:block"
-                            src="images/logo.png"
+                            src="images/managerial.png"
                             alt=""
                         />
                         <div>
                             <h3 class="text-2xl">
-                                <a href="show.html">Supervisory</a>
+                                <a href="/employee/list?search=supervisory">Supervisory</a>
                             </h3>
                             <div class="text-xl font-bold mb-4">
                                 15
@@ -61,12 +61,12 @@
                     <div class="flex">
                         <img
                             class="hidden w-48 mr-6 md:block"
-                            src="images/logo.png"
+                            src="images/rnf.png"
                             alt=""
                         />
                         <div>
                             <h3 class="text-2xl">
-                                <a href="show.html">Rank and File</a>
+                                <a href="/employee/list?search=rank+and+file">Rank and File</a>
                             </h3>
                             <div class="text-xl font-bold mb-4">
                                 15

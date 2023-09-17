@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('position')->nullable();
             $table->string('department')->nullable();
+            $table->string('rank')->nullable();
             $table->longText('remark')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();

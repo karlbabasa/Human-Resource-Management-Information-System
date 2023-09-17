@@ -26,7 +26,7 @@
                 },
             };
         </script>
-        <title>LaraGigs | Find Laravel Jobs & Projects</title>
+        <title>HRMIS</title>
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
@@ -74,7 +74,7 @@
 <footer
             class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-myColor text-white h-24 mt-24 opacity-90 md:justify-center"
         >
-            <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
+            <p class="ml-2">Copyright &copy; 2023</p>
 
             <a
                 href="/employee/create"
