@@ -1,6 +1,8 @@
 <x-layout>
 
     @include('partials._hero')
+                                
+    
     <div
                 class="lg:grid lg:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4"
             >
@@ -16,7 +18,11 @@
                             <h3 class="text-2xl">
                                 <a href="/employee/list">Employees</a>
                             </h3>
-                            <div class="text-xl font-bold mb-4">1,999</div>
+                            <div class="text-2xl font-bold mb-4">
+                
+                                    {{count($employees)}}
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -32,8 +38,8 @@
                             <h3 class="text-2xl">
                                 <a href="/employee/list?search=department+head">Department Heads</a>
                             </h3>
-                            <div class="text-xl font-bold mb-4">
-                                15
+                            <div class="text-2xl font-bold mb-4">
+                                {{count($employees->where('rank', 'like', "Department Head"))}}
                             </div>
                         </div>
                     </div>
@@ -50,8 +56,8 @@
                             <h3 class="text-2xl">
                                 <a href="/employee/list?search=supervisory">Supervisory</a>
                             </h3>
-                            <div class="text-xl font-bold mb-4">
-                                15
+                            <div class="text-2xl font-bold mb-4">
+                                {{count($employees->where('rank', 'like', "Supervisory"))}}
                             </div>
                         </div>
                     </div>
@@ -68,8 +74,8 @@
                             <h3 class="text-2xl">
                                 <a href="/employee/list?search=rank+and+file">Rank and File</a>
                             </h3>
-                            <div class="text-xl font-bold mb-4">
-                                15
+                            <div class="text-2xl font-bold mb-4">
+                                {{count($employees->where('rank', 'like', "Rank and File"))}}
                             </div>
                         </div>
                     </div>

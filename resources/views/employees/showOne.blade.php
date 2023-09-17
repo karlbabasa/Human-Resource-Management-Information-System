@@ -18,9 +18,7 @@
     
                             <h3 class="text-2xl font-bold mb-2">{{$employee->first_name}} {{$employee->middle_name}} {{$employee->last_name}}</h3>
                             <div class="text-xl mb-2">{{$employee->position}} - {{$employee->department}}</div>
-                            
-                            {{-- <x-listing-tags :tagsCsv="$listing->tags" /> --}}
-                                
+                            <div class="text-xl mb-2">{{$employee->rank}}</div>
                             <div class="text-lg mb-2">
                                 <i class="fa-solid fa-location-dot"></i> {{$employee->address}}
                             </div>

@@ -13,7 +13,7 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('employees.index', [
-            
+            'employees' => Employee::all()
         ]);
     }
 
@@ -26,7 +26,7 @@ class EmployeeController extends Controller
     public function store(Request $request) {
         $formFields = $request->validate([
             'first_name' => 'required',
-            'middle_name' => 'required',
+            'middle_name',
             'last_name' => 'required',
             'email' => ['required', 'email'],
             'phone' => 'required',
@@ -34,8 +34,8 @@ class EmployeeController extends Controller
             'position' => 'required',
             'department' => 'required',
             'rank' => 'required',
-            'start_date' => 'required',
-            'remark' => 'required'
+            'start_date',
+            'remark'
         ]);
 
         if($request->hasFile('picture')) {
