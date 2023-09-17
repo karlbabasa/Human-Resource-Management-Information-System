@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 use function Laravel\Prompts\search;
 
@@ -14,8 +13,7 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('employees.index', [
-            //'heading' => 'Latest Listings',
-            //'listings' => Employees::latest()->filter(request(['tag', 'search' ]))->paginate(6) //all //simplePaginate <- for next and prev
+            
         ]);
     }
 
@@ -43,7 +41,7 @@ class EmployeeController extends Controller
             $formFields['picture'] = $request->file('picture')->store('pictures','public');
         }
 
-        //$formFields['user_id'] = auth()->id();
+        $formFields['user_id'] = auth()->id();
 
         Employee::create($formFields);
 
@@ -52,9 +50,9 @@ class EmployeeController extends Controller
     
     //show employee list
     public function show() {
-        //dd(request('tag'));
         return view('employees.list', [
-            'employees' => Employee::all()
+            //'employees' => Employee::all()
+            'employees' => Employee::latest()->filter(request(['search' ]))->paginate(5) //all //simplePaginate <- for next and prev
         ]);
     }
 
@@ -65,11 +63,6 @@ class EmployeeController extends Controller
 
     // update listing data
     public function update(Request $request, Employee $employee) {
-
-        // //make sure logged in user is owner
-        // if($listing->user_id != auth()->id()) {
-        //     abort(403, 'Unauthorized Action');
-        // }
 
         $formFields = $request->validate([
             'first_name' => 'required',
@@ -94,11 +87,6 @@ class EmployeeController extends Controller
 
     // Delete Listing
     public function destroy(Employee $employee) {
-
-        //make sure logged in user is owner
-        // if($employee->user_id != auth()->id()) {
-        //     abort(403, 'Unauthorized Action');
-        // }
 
         $employee->delete();
         return redirect('/employee/list')->with('message', 'Deleted Successfully!');
