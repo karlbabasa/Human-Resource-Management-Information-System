@@ -151,17 +151,16 @@
             </div>
 
             <div class="mb-6">
-                <label for="end_date" class="inline-block text-lg mb-2"
-                    >Date Resigned</label
+                <label for="rank" class="inline-block text-lg mb-2"
+                    >Rank Position</label
                 >
-                <input
-                    type="date"
-                    class="border border-gray-200 rounded p-2 w-full"
-                    name="end_date"
-                    {{-- value="{{$employee->start_date}}" --}}
-                />
+                <select name="rank" class="border border-gray-200 rounded p-2 w-full" value="{{$employee->rank}}"> 
+                    <option value="Rank and File">Rank and File</option> 
+                    <option value="Supervisory">Supervisory</option> 
+                    <option value="Department Head">Department Head</option> 
+                </select>
 
-                @error('end_date')
+                @error('rank')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
 

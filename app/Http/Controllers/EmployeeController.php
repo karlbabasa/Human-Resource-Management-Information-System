@@ -26,7 +26,7 @@ class EmployeeController extends Controller
     public function store(Request $request) {
         $formFields = $request->validate([
             'first_name' => 'required',
-            'middle_name',
+            'middle_name' => 'required',
             'last_name' => 'required',
             'email' => ['required', 'email'],
             'phone' => 'required',
@@ -34,8 +34,7 @@ class EmployeeController extends Controller
             'position' => 'required',
             'department' => 'required',
             'rank' => 'required',
-            'start_date',
-            'remark'
+            'remark' => 'required'
         ]);
 
         if($request->hasFile('picture')) {
@@ -53,7 +52,7 @@ class EmployeeController extends Controller
     public function show() {
         return view('employees.list', [
             //'employees' => Employee::all()
-            'employees' => Employee::latest()->filter(request(['search' ]))->paginate(5) //all //simplePaginate <- for next and prev
+            'employees' => Employee::latest()->filter(request(['search' ]))->paginate() //all //simplePaginate <- for next and prev
         ]);
     }
 
@@ -67,7 +66,7 @@ class EmployeeController extends Controller
 
         $formFields = $request->validate([
             'first_name' => 'required',
-            'middle_name' => 'required',
+            'middle_name' => 'string',
             'last_name' => 'required',
             'email' => ['required', 'email'],
             'phone' => 'required',
@@ -75,7 +74,7 @@ class EmployeeController extends Controller
             'position' => 'required',
             'department' => 'required',
             'rank' => 'required',
-            'remark' => 'required'
+            'remark' => 'string'
         ]);
 
         if($request->hasFile('picture')) {

@@ -153,7 +153,7 @@
                 <label for="rank" class="inline-block text-lg mb-2"
                     >Rank Position</label
                 >
-                <select name="rank" class="border border-gray-200 rounded p-2 w-full"> 
+                <select name="rank" class="border border-gray-200 rounded p-2 w-full" value="{{old('rank')}}"> 
                     <option value="Rank and File">Rank and File</option> 
                     <option value="Supervisory">Supervisory</option> 
                     <option value="Department Head">Department Head</option> 

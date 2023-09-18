@@ -28,7 +28,7 @@ Route::get('/employee/list', [EmployeeController::class, 'show'])->middleware('a
 Route::get('/employee/{employee}/edit', [EmployeeController::class, 'edit'])->middleware('auth');
 
 //submit update
-Route::put('/employees/{}', [EmployeeController::class, 'update'])->middleware('auth');
+Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->middleware('auth');
 
 //DELETE
 Route::delete('/employees/{employee}/delete', [EmployeeController::class, 'destroy'])->middleware('auth');
